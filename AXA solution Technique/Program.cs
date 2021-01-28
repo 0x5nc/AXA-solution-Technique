@@ -1,4 +1,6 @@
 ﻿using System.Threading.Tasks;
+using AXA_solution_Technique.Interfaces;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace AXA_solution_Technique
 {
@@ -6,8 +8,12 @@ namespace AXA_solution_Technique
     {
         static async Task Main(string[] args)
         {
-            //Not implementing Dependency Injection for simplicity purposes
-            ProducerConsumer producerConsumer = new ProducerConsumer();
+            // Implementing Dependency Injection
+            var serviceProvider = new ServiceCollection()
+                .AddTransient<IProducerConsumer, ProducerConsumer>()
+                .BuildServiceProvider();
+
+            var producerConsumer = serviceProvider.GetService<IProducerConsumer>();
 
             //Reading the simulated large txt file input
             producerConsumer.ReadFile();
