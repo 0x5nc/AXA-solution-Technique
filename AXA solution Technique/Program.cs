@@ -1,6 +1,6 @@
-﻿using System.Threading.Tasks;
-using AXA_solution_Technique.Interfaces;
+﻿using AXA_solution_Technique.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
+using System.Threading.Tasks;
 
 namespace AXA_solution_Technique
 {
