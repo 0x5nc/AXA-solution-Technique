@@ -1,7 +1,6 @@
 ﻿using AXA_solution_Technique.Interfaces;
 using System;
 using System.IO;
-using System.Threading.Tasks;
 
 namespace AXA_solution_Technique
 {
@@ -20,12 +19,19 @@ namespace AXA_solution_Technique
 
         }
 
-        public Task PrintFile()
+        public void PrintFile()
         {
-            throw new System.NotImplementedException();
+            string line;
+
+            Console.WriteLine("Printing the locked file");
+
+            while ((line = _streamReader.ReadLine()) != null)
+            {
+                Console.WriteLine(line);
+            }
         }
 
-        public Task EditFile()
+        public void EditFile()
         {
             throw new System.NotImplementedException();
         }
