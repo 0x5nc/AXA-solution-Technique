@@ -1,8 +1,10 @@
-﻿namespace AXA_solution_Technique
+﻿using System.Threading.Tasks;
+
+namespace AXA_solution_Technique
 {
     class Program
     {
-        static void Main(string[] args)
+        static async Task Main(string[] args)
         {
             //Not implementing Dependency Injection for simplicity purposes
             ProducerConsumer producerConsumer = new ProducerConsumer();
@@ -11,10 +13,10 @@
             producerConsumer.ReadFile();
 
             //Printing File then Editing for the implemented lock 
-            producerConsumer.PrintFile();
-            producerConsumer.EditFile();
-            producerConsumer.PrintFile();
-            producerConsumer.EditFile();
+            await producerConsumer.PrintFile();
+            await producerConsumer.EditFile();
+            await producerConsumer.PrintFile();
+            await producerConsumer.EditFile();
         }
     }
 }

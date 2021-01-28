@@ -1,9 +1,11 @@
-﻿namespace AXA_solution_Technique.Interfaces
+﻿using System.Threading.Tasks;
+
+namespace AXA_solution_Technique.Interfaces
 {
     public interface IProducerConsumer
     {
         void ReadFile();
-        void PrintFile();
-        void EditFile();
+        Task PrintFile();
+        Task EditFile();
     }
 }
